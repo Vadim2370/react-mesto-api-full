@@ -1,4 +1,4 @@
-export const baseUrl = 'http://localhost:3005';
+export const baseUrl = 'http://api.stdem11.nomoredomains.sbs';
 
 export const headers = {
   Accept: 'application/json',

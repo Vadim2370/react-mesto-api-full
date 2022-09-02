@@ -1,4 +1,3 @@
-// const authUrl = 'https://auth.nomoreparties.co';
 import { baseUrl } from './constApi';
 
 function checkResponse(res) {
