@@ -6,7 +6,8 @@
   "scripts": {
     "lint": "npx eslint .",
     "start": "node app.js",
-    "dev": "nodemon app.js"
+    "dev": "nodemon app.js",
+    "deploy": "scp -r ./controllers ./errors ./middlewares ./models ./routes ./utils  app.js .env package.json package-lock.json vadim2370@84.252.137.26:~/mesto/backend"
   },
   "devDependencies": {
     "eslint": "^8.2.0",

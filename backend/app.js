@@ -10,7 +10,7 @@ const { requestLogger, errorLogger } = require('./middlewares/logger');
 const cors = require('./middlewares/cors');
 const router = require('./routes');
 
-const { PORT = 3001 } = process.env;
+const { PORT = 3000 } = process.env;
 const DATABASE_URL = 'mongodb://localhost:27017/mestodb';
 
 const app = express();
