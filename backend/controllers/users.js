@@ -154,7 +154,7 @@ const login = (req, res, next) => {
 
 const logout = (req, res, next) => {
   try {
-    res.clearCookie(jwt).send({ message: 'Выход' });
+    res.clearCookie('jwt').send({ message: 'Выход' });
   } catch (err) {
     next(err);
   }

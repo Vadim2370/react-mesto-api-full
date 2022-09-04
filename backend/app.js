@@ -25,7 +25,6 @@ app.use(cors);
 app.use(requestLogger);
 app.use(helmet());
 app.use(limiter);
-// app.use(express.json());
 app.use(bodyParser.json());
 app.use(cookieParser());
 mongoose.connect(DATABASE_URL);
