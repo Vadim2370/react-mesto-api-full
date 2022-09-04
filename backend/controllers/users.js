@@ -153,8 +153,11 @@ const login = (req, res, next) => {
 };
 
 const logout = (req, res, next) => {
-  res.send({ message: 'Выход' })
-    .catch(next);
+  try {
+    res.clearCookie(jwt).send({ message: 'Выход' });
+  } catch (err) {
+    next(err);
+  }
 };
 
 module.exports = {

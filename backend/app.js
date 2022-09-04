@@ -32,23 +32,14 @@ mongoose.connect(DATABASE_URL);
 app.use('/', router);
 app.use(errorLogger);
 app.use(errors());
+
 app.use((err, req, res, next) => {
   const { statusCode = 500, message } = err;
-  if (err) {
-    return res.status(statusCode);
-  }
-  return res.send({
+  res.status(statusCode).send({
     message: statusCode === 500 ? 'Ошибка сервера' : message,
-  })
-    .catch(next);
+  });
+  next();
 });
-// app.use((err, req, res, next) => {
-//   const { statusCode = 500, message } = err;
-//   res.status(statusCode).send({
-//     message: statusCode === 500 ? 'Ошибка сервера' : message,
-//   });
-//   next();
-// });
 
 app.listen(PORT, () => {
   console.log(`port ${PORT}`);

@@ -1,5 +1,4 @@
 const router = require('express').Router();
-const { errors } = require('celebrate');
 const auth = require('../middlewares/auth');
 const userRouter = require('./users');
 const cardRouter = require('./cards');
@@ -15,7 +14,6 @@ router.get('/crash-test', () => {
 router.use(publicRouter);
 router.use(auth, userRouter);
 router.use(auth, cardRouter);
-router.use(errors());
 router.use(auth, (req, res, next) => {
   next(new NotFoundError('Страница не найдена'));
 });
